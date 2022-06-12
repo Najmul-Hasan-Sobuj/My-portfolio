@@ -23,10 +23,13 @@
                     href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
                     class="navbar-nav-link font-weight-semibold"><span class="text-pink"><i
                             class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+            <li class="nav-item">
+                <a href="#" class="navbar-nav-link" target="_blank">
+                    <i class="icon-versions mr-2"></i>
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </a>
+            </li>
         </ul>
-        <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-            Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-        </div>
     </div>
 </div>
 <!-- /footer -->

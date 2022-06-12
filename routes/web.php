@@ -16,6 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('backend.layouts.app');
 });
-Route::get('/home', function () {
-    return view('welcome');
-});
