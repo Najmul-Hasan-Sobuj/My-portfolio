@@ -25,17 +25,19 @@
                 data-toggle="dropdown">
                 <img src="{{ asset('global_assets/images/placeholders/placeholder.jpg') }} "
                     class="rounded-pill mr-lg-2" height="34" alt="">
-                <span class="d-none d-lg-inline-block">Victoria</span>
+                <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
-                <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
-                <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span
-                        class="badge badge-primary badge-pill ml-auto">58</span></a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
-                <a href="#" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" class="dropdown-item"><i class="icon-switch2"></i>
+                    Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </li>
     </ul>

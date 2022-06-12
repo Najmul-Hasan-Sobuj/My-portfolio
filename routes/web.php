@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('backend.layouts.app');
+    return view('welcome');
 });
+
+Auth::routes(['register' => false]);
+// Route::group(['prefix' => 'provider', 'as' => 'provider.'], function () {
+// });
+
+
+Route::get('/home', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('home');
+// Auth::routes();
