@@ -10,7 +10,7 @@
     <div class="navbar-collapse collapse" id="navbar-footer">
         <span class="navbar-text">
             &copy; {{ date('Y') }} <a href="#">Limitless Web App Kit</a> by <a
-                href="https://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+                href="https://themeforest.net/user/Kopyov" target="_blank">Md. Najmul Hasan</a>
         </span>
 
         <ul class="navbar-nav ml-lg-auto">

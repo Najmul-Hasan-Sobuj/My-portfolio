@@ -22,6 +22,5 @@ Auth::routes(['register' => false]);
 // Route::group(['prefix' => 'provider', 'as' => 'provider.'], function () {
 // });
 
-
-Route::get('/home', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('home');
-// Auth::routes();
+Route::get('dashboard', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('dashboard');
+Route::resource('home', App\Http\Controllers\Backend\HomePageController::class);

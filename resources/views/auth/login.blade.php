@@ -23,8 +23,6 @@
                             </div>
 
                             <div class="form-group form-group-feedback form-group-feedback-left">
-                                {{-- <input type="text" class="form-control" placeholder="Username"> --}}
-
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <div class="form-control-feedback">
