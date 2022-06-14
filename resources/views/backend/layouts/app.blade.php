@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
-
+    <link rel="icon" type="image/png" href="{{ asset('global_assets/images/logo_icon_dark.png') }}">
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
         type="text/css">
@@ -97,6 +97,7 @@
     <script src="{{ asset('global_assets/js/plugins/notifications/sweet_alert.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/app.js') }} "></script>
+    <script src="{{ asset('global_assets/js/custom.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/datatables_advanced.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/datatables_extension_buttons_init.js') }} "></script>

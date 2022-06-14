@@ -18,6 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// error pages start
+route::get('error_403', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_403']);
+route::get('error_404', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_404']);
+route::get('error_405', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_405']);
+route::get('error_500', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_500']);
+route::get('error_503', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_503']);
+route::get('error_offline', [App\Http\Controllers\Backend\ErrorPageController::class, 'error_offline']);
+// error pages end
+
 Auth::routes(['register' => false]);
 // Route::group(['prefix' => 'provider', 'as' => 'provider.'], function () {
 // });
