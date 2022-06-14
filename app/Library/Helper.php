@@ -13,7 +13,7 @@ class Helper
         $fileExtention = $mainFile->extension();
 
         $validExtentions = array('jpeg', 'jpg', 'png', 'heic');
-        $path = public_path('uploads/');
+        $path = public_path('global_assets/uploads/');
         $currentTime = time();
         $fileName = $currentTime . '.' . $fileExtention;
 
