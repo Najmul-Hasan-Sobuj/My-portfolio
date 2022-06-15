@@ -18,7 +18,8 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        return view('backend.home.list');
+        $data['home'] = Home::get();
+        return view('backend.home.list', $data);
     }
 
     /**

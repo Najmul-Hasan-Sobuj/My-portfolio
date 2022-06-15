@@ -9,14 +9,13 @@
             <a href="{{ route('home.create') }}" class="btn btn-info add-new" style="float: right;">Add New</a>
         </div>
         {{-- table class= "datatable-highlight || datatable-button-init-basic || datatable-button-init-custom" --}}
-        <table class="data-list table table-bordered table-hover datatable-highlight">
+        <table id="table" class="data-list table table-bordered table-hover datatable-highlight">
             <thead>
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Job Title</th>
                     <th>DOB</th>
-                    <th>Status</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -26,7 +25,6 @@
                     <td><a href="#">Enright</a></td>
                     <td>Traffic Court Referee</td>
                     <td>22 Jun 1972</td>
-                    <td><span class="badge badge-success">Active</span></td>
                     <td>
                         <ul class="list-inline mb-0">
                             <li class="dropdown">
@@ -57,16 +55,16 @@
     <!-- /highlighting rows and columns -->
 @endsection
 
-{{-- @push('script')
+@push('script')
     <script type="text/javascript">
-        $('#studentTable').DataTable({
-            dom: 'lBfrtip',
-            "iDisplayLength": 10,
-            "lengthMenu": [10, 25, 30, 50],
-            columnDefs: [{
-                'orderable': false,
-                "targets": 3
-            }]
-        });
+        // $('#table').DataTable({
+        //     dom: 'lBfrtip',
+        //     "iDisplayLength": 10,
+        //     "lengthMenu": [10, 25, 30, 50],
+        //     columnDefs: [{
+        //         'orderable': true,
+        //         "targets": 5
+        //     }]
+        // });
     </script>
-@endpush --}}
+@endpush
