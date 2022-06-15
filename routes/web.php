@@ -33,3 +33,4 @@ Auth::routes(['register' => false]);
 
 Route::get('dashboard', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('dashboard');
 Route::resource('home', App\Http\Controllers\Backend\HomePageController::class);
+Route::resource('about', App\Http\Controllers\Backend\AboutPageController::class);

@@ -1,12 +1,12 @@
 @extends('backend.layouts.app')
 @section('title')
-    Admin Home
+    Admin About
 @endsection
 @section('content')
     <!-- Highlighting rows and columns -->
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('home.create') }}" class="btn btn-info add-new float-right">Add New</a>
+            <a href="{{ route('about.create') }}" class="btn btn-info add-new float-right">Add New</a>
         </div>
         {{-- table class= "datatable-highlight || datatable-button-init-basic || datatable-button-init-custom" --}}
         <table id="table" class="data-list table table-bordered table-hover datatable-highlight">

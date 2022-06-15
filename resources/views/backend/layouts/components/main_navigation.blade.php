@@ -24,6 +24,15 @@
                 </span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('about.index') }}"
+                class="{{ request()->is('about*') ? 'nav-link active' : 'nav-link' }}">
+                <i class="icon-info22"></i>
+                <span>
+                    About
+                </span>
+            </a>
+        </li>
         <li class="nav-item nav-item-submenu">
             <a href="#" class="nav-link"><i class="icon-color-sampler"></i>
                 <span>Themes</span></a>

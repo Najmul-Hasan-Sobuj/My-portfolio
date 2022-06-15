@@ -3,7 +3,7 @@
     <!-- Basic layout-->
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('home.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="myform" action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <fieldset class="mb-3">
                     <div class="row">
@@ -30,16 +30,16 @@
                         <div class="col-sm-6 col-lg-8">
                             <!-- Basic layout-->
                             <div class="form-group row">
-                                <label for="t_word">Title Word</label>
-                                <input type="text" id="t_word" name="t_word" maxlength="15"
-                                    class="form-control maxlength-options" placeholder="Colorful Word. IMAGINATION"
-                                    required>
+                                <label for="f_title">First Title</label>
+                                <input type="text" id="f_title" name="f_title" maxlength="80"
+                                    class="form-control maxlength-options"
+                                    placeholder="FAILURE IS THE CONDIMENT THAT GIVES SUCCESS SUCCESS" required>
                             </div>
 
                             <div class="form-group row">
-                                <label for="s_title">Second Title</label>
-                                <input type="text" id="s_title" name="s_title" maxlength="45"
-                                    class="form-control maxlength-options" placeholder="IS MORE IMPORTANT THAN KNOWLEDGE"
+                                <label for="t_word">Title Word</label>
+                                <input type="text" id="t_word" name="t_word" maxlength="15"
+                                    class="form-control maxlength-options" placeholder="Colorful Word. IT'S FLAVOR"
                                     required>
                             </div>
 
@@ -55,11 +55,9 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="description">Description</label>
-                                <input type="text" id="description" name="description" maxlength="100"
-                                    class="form-control maxlength-options"
-                                    placeholder="Together we the people achieve more than any single person could ever do alone."
-                                    required>
+                                <label for="description">Your message:</label>
+                                <textarea rows="5" id="description" name="description" cols="5" maxlength="225" class="form-control maxlength-textarea"
+                                    placeholder="This textarea has a limit of 225 chars." required></textarea>
                             </div>
                             <!-- /basic layout -->
                         </div>
