@@ -57,14 +57,21 @@
 
 @push('script')
     <script type="text/javascript">
-        // $('#table').DataTable({
-        //     dom: 'lBfrtip',
-        //     "iDisplayLength": 10,
-        //     "lengthMenu": [10, 25, 30, 50],
-        //     columnDefs: [{
-        //         'orderable': true,
-        //         "targets": 5
-        //     }]
-        // });
+        $('#table').DataTable({
+            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            // "iDisplayLength": 10,
+            // "lengthMenu": [10, 25, 30, 50],
+            // columnDefs: [{
+            //     'orderable': true,
+            //     "targets": 5
+            // }]
+
+            autoWidth: false,
+            columnDefs: [{
+                orderable: false,
+                width: 100,
+                targets: [3, 4],
+            }, ],
+        });
     </script>
 @endpush

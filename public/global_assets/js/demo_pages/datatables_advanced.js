@@ -23,15 +23,17 @@ var DatatableAdvanced = (function () {
 
         // Setting datatable defaults
         $.extend($.fn.dataTable.defaults, {
-            autoWidth: false,
-            columnDefs: [
-                {
-                    orderable: false,
-                    width: 100,
-                    targets: [4],
-                },
-            ],
-            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            // ### this code are commented because this code are used in blade tamplate ( list.blade.php )
+            // autoWidth: false,
+            // columnDefs: [
+            //     {
+            //         orderable: false,
+            //         width: 100,
+            //         targets: [4],
+            //     },
+            // ],
+            // dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+            // -----------------------------------------------------------------------------------------end
             language: {
                 search: "<span>Filter:</span> _INPUT_",
                 searchPlaceholder: "Type to filter...",
