@@ -18,6 +18,8 @@
     <link href="{{ asset('global_assets/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+
+    <link href="{{ asset('global_assets/js/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
 </head>
 
@@ -99,19 +101,24 @@
     <script src="{{ asset('global_assets/js/plugins/notifications/sweet_alert.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/forms/selects/select2.min.js') }} "></script>
     <script src="{{ asset('global_assets/js/plugins/media/glightbox.min.js') }} "></script>
+
+
     <script src="{{ asset('global_assets/js/app.js') }} "></script>
     <script src="{{ asset('global_assets/js/custom.js') }} "></script>
 
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="{{ asset('global_assets/js/jqueryvalidation/jquery_validate.min.js') }} "></script>
+    <script src="{{ asset('global_assets/js/jqueryvalidation/additional_methods.min.js') }} "></script>
 
     <script src="{{ asset('global_assets/js/demo_pages/gallery.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_layouts.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/datatables_advanced.js') }} "></script>
     <script src="{{ asset('global_assets/js/demo_pages/datatables_extension_buttons_init.js') }} "></script>
 
+    <script src="{{ asset('global_assets/js/toastr/toastr.min.js') }} "></script>
+    {!! Toastr::message() !!}
     <!-- /theme JS files -->
     @stack('script')
+
 </body>
 
 </html>

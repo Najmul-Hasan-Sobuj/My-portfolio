@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use Helper;
+use App\Models\Home;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Validator;
 
 class HomePageController extends Controller
 {
@@ -35,7 +39,38 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validation = Validator::make($request->all(), [
+            't_word'      => 'required',
+            's_title'     => 'required',
+            'description' => 'required',
+            'image'       => 'required',
+        ]);
+
+        if ($validation->passes()) {
+            $mainFile = $request->image;
+            $globalFunImg =  Helper::imageUpload($mainFile);
+
+            if ($globalFunImg['status'] == 1) {
+                Home::create([
+                    't_word'      => $request->t_word,
+                    's_title'     => $request->s_title,
+                    'description' => $request->description,
+                    'image'       => $globalFunImg['filaName'],
+                ]);
+                Toastr::success('Post added successfully');
+                return redirect()->back();
+            } else {
+                Toastr::warning('File extention not matching');
+                return redirect()->back();
+            }
+        } else {
+            $messages = $validation->messages();
+            foreach ($messages->all() as $message) {
+                Toastr::error($message, 'Failed', ['timeOut' => 10000]);
+            }
+            return redirect()->back()->withErrors($validation);
+        }
     }
 
     /**

@@ -167,6 +167,7 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Brian2694\Toastr\ToastrServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -232,7 +233,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
-
+        'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
     ],
 
 ];

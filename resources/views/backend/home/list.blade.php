@@ -6,7 +6,6 @@
     <!-- Highlighting rows and columns -->
     <div class="card">
         <div class="card-header">
-            {{-- <h5 class="card-title">Highlighting rows and columns</h5> --}}
             <a href="{{ route('home.create') }}" class="btn btn-info add-new" style="float: right;">Add New</a>
         </div>
         {{-- table class= "datatable-highlight || datatable-button-init-basic || datatable-button-init-custom" --}}
@@ -28,11 +27,6 @@
                     <td>Traffic Court Referee</td>
                     <td>22 Jun 1972</td>
                     <td><span class="badge badge-success">Active</span></td>
-
-                    {{-- # = {{ route('home.show', [$employees->id]) }}
-                    # = {{ route('home.edit', [$employees->id]) }}
-                    # = {{ route('home.destroy', [$employees->id]) }} --}}
-
                     <td>
                         <ul class="list-inline mb-0">
                             <li class="dropdown">
