@@ -29,6 +29,7 @@
                                 <label>Select Country Name</label>
                                 <select id="country" name="country" class="form-control select-search" data-fouc>
                                     <optgroup label="Mountain Time Zone">
+                                        <option value="">select</option>
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Åland Islands">Åland Islands</option>
                                         <option value="Albania">Albania</option>
@@ -299,6 +300,7 @@
                                     <div class="form-group">
                                         <label>Select Icons</label>
                                         <select id="icon" name="icon" class="form-control select" data-fouc>
+                                            <option value="">select</option>
                                             <option value="far fa-smile">far fa-smile</option>
                                             <option value="far fa-clock ">far fa-clock</option>
                                             <option value="far fa-sliders-h">far fa-sliders-h</option>
@@ -310,6 +312,7 @@
                                     <div class="form-group">
                                         <label>Select Icons Name</label>
                                         <select id="icon_name" name="icon_name" class="form-control select" data-fouc>
+                                            <option value="">select</option>
                                             <option value="Happy Client">Happy Client</option>
                                             <option value="Support Team">Support Team</option>
                                             <option value="Sales Count">Sales Count</option>
