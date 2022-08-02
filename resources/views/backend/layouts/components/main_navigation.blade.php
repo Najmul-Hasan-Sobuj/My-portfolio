@@ -66,6 +66,24 @@
                 </span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('about.index') }}"
+                class="{{ request()->is('about*') ? 'nav-link active' : 'nav-link' }}">
+                <i class="fas fa-info"></i>
+                <span>
+                    About Us
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('contact.index') }}"
+                class="{{ request()->is('contact*') ? 'nav-link active' : 'nav-link' }}">
+                <i class="fas fa-address-book"></i>
+                <span>
+                    Contact Us
+                </span>
+            </a>
+        </li>
         <!-- /main -->
     </ul>
 </div>

@@ -39,4 +39,7 @@ Route::post('home/update', [App\Http\Controllers\Backend\HomePageController::cla
 Route::resource('service', App\Http\Controllers\Backend\ServicePageController::class);
 Route::resource('experience', App\Http\Controllers\Backend\ExperiencePageController::class);
 Route::resource('testimonial', App\Http\Controllers\Backend\TestimonialsPageController::class);
+Route::get('about/edit', [App\Http\Controllers\Backend\AboutPageController::class, 'edit'])->name('about.index');
+Route::post('about/update', [App\Http\Controllers\Backend\AboutPageController::class, 'update'])->name('about.update');
+Route::resource('contact', App\Http\Controllers\Backend\ContactPageController::class);
 Route::resource('icon', App\Http\Controllers\Backend\PickIconPageController::class);
