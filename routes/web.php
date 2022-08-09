@@ -42,4 +42,6 @@ Route::resource('testimonial', App\Http\Controllers\Backend\TestimonialsPageCont
 Route::get('about/edit', [App\Http\Controllers\Backend\AboutPageController::class, 'edit'])->name('about.index');
 Route::post('about/update', [App\Http\Controllers\Backend\AboutPageController::class, 'update'])->name('about.update');
 Route::resource('contact', App\Http\Controllers\Backend\ContactPageController::class);
+Route::resource('category', App\Http\Controllers\Backend\CategoryPageController::class);
+// Route::resource('blog', App\Http\Controllers\Backend\BlogPageController::class);
 Route::resource('icon', App\Http\Controllers\Backend\PickIconPageController::class);

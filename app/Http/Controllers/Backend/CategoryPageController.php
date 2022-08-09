@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Validator;
 
-class CategoriePageController extends Controller
+class CategoryPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,7 @@ class CategoriePageController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.category.create');
     }
 
     /**
@@ -35,7 +38,22 @@ class CategoriePageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Validator = Validator::make($request->all(), [
+            'category_title' => 'required',
+        ]);
+        if ($Validator->passes()) {
+            Category::create([
+                'category_title' => $request->category_title,
+            ]);
+            Toastr::success('Data Inserted Successfully');
+            return redirect()->back();
+        } else {
+            $messages = $Validator->messages();
+            foreach ($messages->all() as $message) {
+                Toastr::error($message, 'Failed', ['timeOut' => 10000]);
+            }
+            return redirect()->back()->withErrors($Validator);
+        }
     }
 
     /**

@@ -84,6 +84,15 @@
                 </span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('category.index') }}"
+                class="{{ request()->is('category*') ? 'nav-link active' : 'nav-link' }}">
+                <i class="fas fa-list-alt"></i>
+                <span>
+                    Category
+                </span>
+            </a>
+        </li>
         <!-- /main -->
     </ul>
 </div>
