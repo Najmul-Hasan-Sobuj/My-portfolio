@@ -94,6 +94,15 @@
             </a>
         </li>
         <!-- /main -->
+        <li class="nav-item">
+            <a href="{{ route('blog.index') }}" class="{{ request()->is('blog*') ? 'nav-link active' : 'nav-link' }}">
+                <i class="icon-blogger2"></i>
+                <span>
+                    Blog
+                </span>
+            </a>
+        </li>
+        <!-- /main -->
     </ul>
 </div>
 <!-- /main navigation -->

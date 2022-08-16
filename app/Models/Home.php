@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Home extends Model
 {
     use HasFactory;
-    protected $fillable = ['color_word', 'title', 'quote', 'cv', 'image']; //backend home page 
+    protected $fillable = ['color_word', 'title', 'quote', 'image']; //backend home page 
 }

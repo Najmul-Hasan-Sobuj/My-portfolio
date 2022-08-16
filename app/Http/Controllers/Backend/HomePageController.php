@@ -47,7 +47,6 @@ class HomePageController extends Controller
                 'color_word' => 'required',
                 'title'      => 'required',
                 'quote'      => 'required',
-                'cv'         => 'required',
                 'image'      => 'required',
             ];
         }

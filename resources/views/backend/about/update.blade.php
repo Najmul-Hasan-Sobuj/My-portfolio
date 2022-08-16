@@ -24,7 +24,7 @@
                             <div class="mb-3">
                                 <label for="details">Details</label>
                                 <textarea rows="3" cols="3" maxlength="225" name="details" class="form-control maxlength-textarea"
-                                    placeholder="This textarea has a limit of 225 chars." required></textarea>
+                                    placeholder="This textarea has a limit of 225 chars." required>{{ @$about->details }}</textarea>
                             </div>
                             <!-- /basic layout -->
                         </div>

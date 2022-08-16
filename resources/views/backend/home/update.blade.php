@@ -60,15 +60,6 @@
                         <span class="form-text text-muted">Accepted formats: gif, png, jpg, heic. File
                             height:475 * width:822</span>
                     </div>
-                    <div class="form-group row">
-                        <label>Resume:</label>
-                        <label class="custom-file">
-                            <input type="file" id="cv" name="cv" class="custom-file-input"
-                                onchange="previewFile(this);">
-                            <span class="custom-file-label">Choose file</span>
-                        </label>
-                        <span class="form-text text-muted">Accepted formats: zip, rar, pdf.</span>
-                    </div>
                 </fieldset>
                 <div class="d-flex justify-content-end align-items-center">
                     <button id="reset" type="reset" class="btn btn-light">Reset <i

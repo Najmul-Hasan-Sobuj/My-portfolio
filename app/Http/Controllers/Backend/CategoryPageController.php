@@ -17,7 +17,8 @@ class CategoryPageController extends Controller
      */
     public function index()
     {
-        return view('backend.category.create');
+        $data['category'] = Category::get();
+        return view('backend.category.create', $data);
     }
 
     /**
@@ -87,7 +88,11 @@ class CategoryPageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category  = Category::find($id);
+
+        return response()->json([
+            'data' => $category
+        ]);
     }
 
     /**
@@ -98,6 +103,6 @@ class CategoryPageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
     }
 }

@@ -63,4 +63,33 @@ class Helper
         }
         return $output;
     }
+
+
+    // file uploads methods
+
+    public static function uploadsFile($mainFile, $filepath,)
+    {
+        $fileExtention    = $mainFile->extension();
+        $fileOriginalName = $mainFile->getClientOriginalName();
+        $file_size        = $mainFile->getSize();
+
+        $validExtentions = array('pdf', 'svg', 'zip', 'rar');
+        $path            = public_path($filepath);
+        $currentTime     = time();
+        $fileName        = $currentTime . '.' . $fileExtention;
+
+        if (in_array($fileExtention, $validExtentions)) {
+            $mainFile->move($path, $fileName);
+
+            $output['status']             = 1;
+            $output['file_name']          = $fileName;
+            $output['file_original_name'] = $fileOriginalName;
+            $output['file_extention']     = $fileExtention;
+            $output['file_size']          = $file_size;
+        } else {
+            $output['errors'] = $fileExtention . ' File is not support';
+            $output['status'] = 0;
+        }
+        return $output;
+    }
 }
