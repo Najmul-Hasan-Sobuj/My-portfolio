@@ -19,7 +19,7 @@ class ServicePageController extends Controller
      */
     public function index()
     {
-        $data['service'] = Service::take(3)->get();
+        $data['service'] = Service::get();
         return view('backend.service.list', $data);
     }
 
@@ -48,19 +48,19 @@ class ServicePageController extends Controller
         ]);
         if ($Validator->passes()) {
             $mainFile = $request->icon;
-            $imgPath = 'global_assets/uploads';
-            $globalFunImg =  Helper::uploadsFunction($mainFile, $imgPath, 96, 87);
+            $filepath = 'global_assets/uploads';
+            $globalFunFile = Helper::uploadsFile($mainFile, $filepath);
 
-            if ($globalFunImg['status'] == 1) {
+            if ($globalFunFile['status'] == 1) {
                 Service::create([
-                    'icon'        => $globalFunImg['file_name'],
+                    'icon'        => $globalFunFile['file_name'],
                     'title'       => $request->title,
                     'description' => $request->description,
                 ]);
                 Toastr::success('Data Inserted Successfully');
                 return redirect()->back();
             } else {
-                $output['messege'] = $globalFunImg['errors'];
+                $output['messege'] = $globalFunFile['errors'];
                 Toastr::warning($output['messege']);
                 return redirect()->back();
             }
@@ -116,9 +116,9 @@ class ServicePageController extends Controller
                 if ($request->icon != $service->icon) {
                     $mainFile = $request->icon;
                     $imgPath = 'global_assets/uploads';
-                    $globalFunImg = Helper::uploadsFunction($mainFile, $imgPath, 96, 87);
+                    $globalFunFile = Helper::uploadsFunction($mainFile, $imgPath, 96, 87);
 
-                    if ($globalFunImg['status'] == 1) {
+                    if ($globalFunFile['status'] == 1) {
                         File::delete(public_path($imgPath . '/') . $service->icon);
                         File::delete(public_path($imgPath . '/thumb/') . $service->icon);
                         File::delete(public_path($imgPath . '/requestImg/') . $service->icon);
@@ -126,12 +126,12 @@ class ServicePageController extends Controller
                         Service::find($id)->update([
                             'title'       => $request->title,
                             'description'      => $request->description,
-                            'icon'      => $globalFunImg['file_name'],
+                            'icon'      => $globalFunFile['file_name'],
                         ]);
                         Toastr::success('service has been updated');
                         return redirect()->back();
                     } else {
-                        $output['messege'] = $globalFunImg['errors'];
+                        $output['messege'] = $globalFunFile['errors'];
                         Toastr::warning($output['messege']);
                         return redirect()->back();
                     }

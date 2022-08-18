@@ -15,13 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/demo', function () {
-//     return view('frontend.contact');
+//     return view('frontend.about');
 // });
 
 Route::get('index', [App\Http\Controllers\Frontend\MainController::class, 'index'])->name('front.index');
 Route::get('touch', [App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact.index');
 Route::post('touch', [App\Http\Controllers\Frontend\ContactController::class, 'store'])->name('contact.store');
-// Route::resource('demo', App\Http\Controllers\Frontend\ContactController::class);
+Route::get('about', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about.index');
+Route::get('res', [App\Http\Controllers\Frontend\AboutController::class, 'getDownload'])->name('about.res');
 
 
 // error pages start
@@ -38,19 +39,20 @@ Auth::routes([
     //'reset' => false, // Password Reset Routes...
     //'verify' => false, // Email Verification Routes...
 ]);
-// Route::group(['prefix' => 'provider', 'as' => 'provider.'], function () {
-// });
 
-Route::get('dashboard', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('dashboard');
-Route::resource('employee', App\Http\Controllers\Backend\EmployeeController::class);
-Route::get('home/edit', [App\Http\Controllers\Backend\HomePageController::class, 'edit'])->name('home.index');
-Route::post('home/update', [App\Http\Controllers\Backend\HomePageController::class, 'update'])->name('home.update');
-Route::resource('service', App\Http\Controllers\Backend\ServicePageController::class);
-Route::resource('experience', App\Http\Controllers\Backend\ExperiencePageController::class);
-Route::resource('testimonial', App\Http\Controllers\Backend\TestimonialsPageController::class);
-Route::get('about/edit', [App\Http\Controllers\Backend\AboutPageController::class, 'edit'])->name('about.index');
-Route::post('about/update', [App\Http\Controllers\Backend\AboutPageController::class, 'update'])->name('about.update');
-// Route::resource('contact', App\Http\Controllers\Backend\ContactPageController::class);
-Route::resource('category', App\Http\Controllers\Backend\CategoryPageController::class);
-Route::resource('blog', App\Http\Controllers\Backend\BlogPageController::class);
-Route::resource('icon', App\Http\Controllers\Backend\PickIconPageController::class);
+
+Route::group(['prefix' => 'provider'], function () {
+    Route::get('dashboard', [App\Http\Controllers\Backend\HomeController::class, 'index'])->name('dashboard');
+    Route::resource('employee', App\Http\Controllers\Backend\EmployeeController::class);
+    Route::get('home/edit', [App\Http\Controllers\Backend\HomePageController::class, 'edit'])->name('home.index');
+    Route::post('home/update', [App\Http\Controllers\Backend\HomePageController::class, 'update'])->name('home.update');
+    Route::resource('service', App\Http\Controllers\Backend\ServicePageController::class);
+    Route::resource('experience', App\Http\Controllers\Backend\ExperiencePageController::class);
+    Route::resource('testimonial', App\Http\Controllers\Backend\TestimonialsPageController::class);
+    Route::get('about/edit', [App\Http\Controllers\Backend\AboutPageController::class, 'edit'])->name('about.index');
+    Route::post('about/update', [App\Http\Controllers\Backend\AboutPageController::class, 'update'])->name('about.update');
+    // Route::resource('contact', App\Http\Controllers\Backend\ContactPageController::class);
+    Route::resource('category', App\Http\Controllers\Backend\CategoryPageController::class);
+    Route::resource('blog', App\Http\Controllers\Backend\BlogPageController::class);
+    Route::resource('icon', App\Http\Controllers\Backend\PickIconPageController::class);
+});
