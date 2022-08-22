@@ -54,10 +54,8 @@ class HomePageController extends Controller
         if ($validator->passes()) {
             if (isset($request->image)) {
                 $imageFile = $request->image;
-                // $resumeFile = $request->cv;
                 $uploadPath = 'global_assets/uploads';
                 $globalFunImg = Helper::uploadsFunction($imageFile, $uploadPath, 475, 822);
-                // $globalFunFile = Helper::uploadsFunction($resumeFile, $uploadPath, ['zip', 'rar', 'pdf'], false);
                 if (!empty($home)) {
                     if ($request->image != $home->image) {
                         if ($globalFunImg['status'] == 1) {
@@ -69,7 +67,6 @@ class HomePageController extends Controller
                                 'color_word' => $request->color_word,
                                 'title'      => $request->title,
                                 'quote'      => $request->quote,
-                                // 'cv'         => $globalFunFile['file_name'],
                                 'image'      => $globalFunImg['file_name'],
                             ]);
                             Toastr::success('Data has been updated');
@@ -80,7 +77,6 @@ class HomePageController extends Controller
                         'color_word' => $request->color_word,
                         'title'      => $request->title,
                         'quote'      => $request->quote,
-                        // 'cv'         => $globalFunFile['file_name'],
                         'image'      => $globalFunImg['file_name'],
                     ]);
                     Toastr::success('Data has been created');

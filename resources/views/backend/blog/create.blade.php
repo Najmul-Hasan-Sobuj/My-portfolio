@@ -1,64 +1,86 @@
 @extends('backend.layouts.app')
 @section('content')
-    <!-- Basic layout-->
-    <div class="card">
-        <div class="card-body">
-            <form id="myform" action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <fieldset class="mb-3">
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card">
-                                <div class="card-img-actions m-1">
-                                    <img id="previewImg" class="card-img img-fluid "
-                                        style="height:440px; object-fit: cover;"
-                                        src="{{ asset('global_assets/images/placeholders/placeholder.jpg') }}"
-                                        alt="">
+    <form id="myform" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <fieldset class="mb-3">
+            <div class="d-flex align-items-stretch align-items-lg-start flex-column flex-lg-row">
+                <!-- Left content -->
+                <div class="flex-1 order-2 order-lg-1">
+
+                    <!-- Post -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="mb-3 text-center">
+                                    <a href="#" class="d-inline-block">
+                                        <img id="previewImg" src="../../../../global_assets/images/placeholders/cover.jpg"
+                                            class="img-fluid" alt="" style="height:440px; object-fit: cover;">
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-sm-6 col-lg-8">
-                            <!-- Basic layout-->
-                            <div class="form-group row">
-                                <label for="title">Title</label>
-                                <input type="text" id="title" name="title" maxlength="20"
-                                    class="form-control maxlength-options" placeholder="Enter Your Full title" required>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="description">Description</label>
-                                <input type="text" id="description" name="description" maxlength="110"
-                                    class="form-control maxlength-options"
-                                    placeholder="Together we the people achieve more than any single person could ever do alone."
+                            <div class="form-group">
+                                <label>Select Category</label>
+                                <select id="category_name" name="category_name" class="form-control select-search" data-fouc
                                     required>
+                                    <option value="">select</option>
+                                    @foreach ($category as $item)
+                                        <option value="{{ $item->id }}">{{ $item->category_title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
-                            <div class="form-group row">
-                                <label>Your Photo:</label>
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title" maxlength="50"
+                                    class="form-control maxlength-options" placeholder="Enter Your Title" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Blog Cover Photo</label>
                                 <label class="custom-file">
-                                    <input type="file" id="icon" name="icon" class="custom-file-input"
-                                        onchange="previewFile(this);">
+                                    <input type="file" id="cover_image" name="cover_image" class="custom-file-input"
+                                        onchange="previewFile(this);" required>
                                     <span class="custom-file-label">Choose file</span>
                                 </label>
-                                <span class="form-text text-muted">Accepted formats: gif, png, jpg, heic. File
-                                    height:475 * width:822</span>
+                                <span class="form-text text-muted">Accepted formats: jpeg, png, jpg.</span>
                             </div>
-                            <!-- /basic layout -->
 
-                            <div class="d-flex justify-content-end align-items-center">
-                                <button id="reset" type="reset" class="btn btn-light">Reset <i
-                                        class="icon-reload-alt ml-2"></i></button>
-                                <a id="back" href="{{ route('service.index') }}" class="btn btn-success ml-3">Back <i
-                                        class="fas fa-backward ml-2"></i></a>
-                                <button id="submit" class="btn btn-primary ml-3">Submit <i class="icon-paperplane ml-2"
-                                        value="Validate!"></i></button>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-3">
+                                    <label>Profile Picture</label>
+                                    <input type="file" id="pro_pic" name="pro_pic"class="form-control" required>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-3">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" maxlength="20"
+                                            class="form-control maxlength-options" placeholder="Enter Your Name" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /post -->
+                        <!-- Comments -->
+                        <div class="card-header header-elements-sm-inline">
+                            <h6 class="card-title font-weight-semibold">Blog Post</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <textarea id="add-comment" placeholder="the" name="post" id="" cols="30" rows="10"></textarea>
+                            </div>
+
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary"><i class="icon-plus22 mr-1"></i> Post
+                                </button>
                             </div>
                         </div>
                     </div>
-                </fieldset>
-            </form>
-        </div>
-    </div>
+                    <!-- /comments -->
+                </div>
+                <!-- /left content -->
+            </div>
+        </fieldset>
+    </form>
     <!-- /basic layout -->
 @endsection

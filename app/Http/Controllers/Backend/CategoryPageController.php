@@ -39,6 +39,8 @@ class CategoryPageController extends Controller
      */
     public function store(Request $request)
     {
+        $CategoryTitle = Category::select('categories.category_title')->get();
+
         $Validator = Validator::make($request->all(), [
             'category_title' => 'required',
         ]);

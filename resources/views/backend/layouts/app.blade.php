@@ -111,8 +111,11 @@
     <!-- Theme JS files -->
     <script src="{{ asset('global_assets/js/plugins/ui/prism.min.js') }}"></script>
     <script src="{{ asset('global_assets/js/plugins/notifications/bootbox.min.js') }}"></script>
+    <script src="{{ asset('global_assets/js/plugins/editors/summernote/summernote.min.js') }}"></script>
 
     <script src="{{ asset('global_assets/js/app.js') }}"></script>
+
+    <script src="{{ asset('global_assets/js/demo_pages/blog_single.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/components_modals.js') }}"></script>
     <script src="{{ asset('global_assets/js/demo_pages/form_select2.js') }}"></script>
 

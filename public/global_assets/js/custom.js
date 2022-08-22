@@ -26,9 +26,9 @@ function previewFile(input) {
 $(document).on("click", ".data-list .delete", function (e) {
     e.preventDefault();
     var deleteLinkUrl = $(this).attr("delete-link");
-    var dataType = $(this).attr("data-type")
-        ? $(this).attr("data-type")
-        : "html";
+    var dataType = $(this).attr("data-type") ?
+        $(this).attr("data-type") :
+        "html";
     var csrf = $(this).find("input[name='_token']").val();
 
     swalInit.fire({
@@ -42,7 +42,10 @@ $(document).on("click", ".data-list .delete", function (e) {
             $.ajax({
                 url: deleteLinkUrl,
                 type: "POST",
-                data: { _token: csrf, _method: "DELETE" },
+                data: {
+                    _token: csrf,
+                    _method: "DELETE"
+                },
                 dataType: dataType,
                 success: function (data) {
                     var dataError =
@@ -90,4 +93,12 @@ var swalInit = swal.mixin({
         input: "form-control",
     },
 });
+// ----------------------------------------------------------------------------------- end
+
+// submit button disable when i click cancel
+(function () {
+    $('.from-prevent-multiple-submits').on('submit', function () {
+        $('.from-prevent-multiple-submits').attr('disabled', 'true');
+    })
+})();
 // ----------------------------------------------------------------------------------- end

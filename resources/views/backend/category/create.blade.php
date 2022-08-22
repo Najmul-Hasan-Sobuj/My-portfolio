@@ -2,7 +2,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="myform" class="from-prevent-multiple-submits" action="{{ route('category.store') }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <fieldset class="mb-3">
                     <div class="row">
@@ -18,8 +19,9 @@
                             <div class="d-flex justify-content-end align-items-center">
                                 <button id="reset" type="reset" class="btn btn-light">Reset <i
                                         class="icon-reload-alt ml-2"></i></button>
-                                <button id="submit" class="btn btn-primary ml-3">Submit <i class="icon-paperplane ml-2"
-                                        value="Validate!"></i></button>
+                                <button type="submit" id="submit"
+                                    class="btn btn-primary ml-3 from-prevent-multiple-submits">Submit <i
+                                        class="icon-paperplane ml-2" value="Validate!"></i></button>
                             </div>
                         </div>
                 </fieldset>

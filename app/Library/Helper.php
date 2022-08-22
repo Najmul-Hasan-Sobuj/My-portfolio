@@ -14,7 +14,7 @@ class Helper
         $fileOriginalName = $mainFile->getClientOriginalName();
         $file_size        = $mainFile->getSize();
 
-        $validExtentions = array('jpeg', 'jpg', 'png', 'heic', 'svg');
+        $validExtentions = array('jpeg', 'jpg', 'png');
         $path            = public_path($imgPath);
         $currentTime     = time();
         $fileName        = $currentTime . '.' . $fileExtention;
