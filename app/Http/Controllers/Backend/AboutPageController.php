@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use Helper;
 use App\Models\About;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\File;
@@ -52,7 +51,6 @@ class AboutPageController extends Controller
         }
         $validator = Validator::make($request->all(), $validator);
         if ($validator->passes()) {
-            // dd($request->all());
             if (isset($request->resume)) {
                 $mainFile = $request->resume;
                 $filepath = 'global_assets/uploads';
@@ -71,7 +69,6 @@ class AboutPageController extends Controller
                         }
                     }
                 } else {
-                    // dd('create');
                     About::create([
                         'video_url' => $request->video_url,
                         'title'     => $request->title,

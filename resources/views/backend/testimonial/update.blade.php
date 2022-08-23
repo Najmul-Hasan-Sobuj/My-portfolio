@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-body">
             <form id="myform" action="{{ route('testimonial.update', [$testimonial->id]) }}" method="POST"
-                enctype="multipart/form-data">
+                enctype="multipart/form-data" class="from-prevent-multiple-submits">
                 @csrf
                 @method('PUT')
                 <fieldset class="mb-3">
@@ -353,8 +353,8 @@
                             class="icon-reload-alt ml-2"></i></button>
                     <a id="back" href="{{ route('testimonial.index') }}" class="btn btn-success ml-3">Back <i
                             class="fas fa-backward ml-2"></i></a>
-                    <button id="submit" class="btn btn-primary ml-3">Submit <i class="icon-paperplane ml-2"
-                            value="Validate!"></i></button>
+                    <button id="submit" class="btn btn-primary ml-3 from-prevent-multiple-submits">Submit <i
+                            class="icon-paperplane ml-2" value="Validate!"></i></button>
                 </div>
             </form>
         </div>

@@ -142,7 +142,7 @@ class TestimonialsPageController extends Controller
                             'icon'              => $request->icon,
                             'number'            => $request->number,
                             'icon_name'         => $request->icon_name,
-                            'imaeg'             => $globalFunImg['file_name'],
+                            'image'             => $globalFunImg['file_name'],
                         ]);
                         Toastr::success('testimonial has been updated');
                         return redirect()->back();

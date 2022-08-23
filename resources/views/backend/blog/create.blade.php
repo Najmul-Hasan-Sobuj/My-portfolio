@@ -1,6 +1,7 @@
 @extends('backend.layouts.app')
 @section('content')
-    <form id="myform" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+    <form id="myform" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data"
+        class="from-prevent-multiple-submits">
         @csrf
         <fieldset class="mb-3">
             <div class="d-flex align-items-stretch align-items-lg-start flex-column flex-lg-row">
@@ -71,7 +72,8 @@
                             </div>
 
                             <div class="text-right">
-                                <button type="submit" class="btn btn-primary"><i class="icon-plus22 mr-1"></i> Post
+                                <button type="submit" class="btn btn-primary from-prevent-multiple-submits"><i
+                                        class="icon-plus22 mr-1"></i> Post
                                 </button>
                             </div>
                         </div>
