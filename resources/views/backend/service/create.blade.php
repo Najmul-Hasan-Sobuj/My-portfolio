@@ -38,11 +38,10 @@
                                 <label>Your Photo:</label>
                                 <label class="custom-file">
                                     <input type="file" id="icon" name="icon" class="custom-file-input"
-                                        onchange="previewFile(this);">
+                                        onchange="previewFile(this);" required>
                                     <span class="custom-file-label">Choose file</span>
                                 </label>
-                                <span class="form-text text-muted">Accepted formats: gif, png, jpg, heic. File
-                                    height:475 * width:822</span>
+                                <span class="form-text text-muted">Accepted formats: gif, png, jpg, jpeg.</span>
                             </div>
                             <!-- /basic layout -->
 

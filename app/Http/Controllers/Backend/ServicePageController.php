@@ -105,28 +105,28 @@ class ServicePageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             // 'icon'        => 'required',
             'title'       => 'required',
             'description' => 'required',
         ]);
-        if ($Validator->passes()) {
+        if ($validator->passes()) {
             $service = Service::find($id);
             if (isset($request->icon)) {
                 if ($request->icon != $service->icon) {
                     $mainFile = $request->icon;
-                    $imgPath = 'global_assets/uploads';
-                    $globalFunFile = Helper::uploadsFunction($mainFile, $imgPath, 96, 87);
+                    $filepath = 'global_assets/uploads';
+                    $globalFunFile = Helper::uploadsFile($mainFile, $filepath);
 
                     if ($globalFunFile['status'] == 1) {
-                        File::delete(public_path($imgPath . '/') . $service->icon);
-                        File::delete(public_path($imgPath . '/thumb/') . $service->icon);
-                        File::delete(public_path($imgPath . '/requestImg/') . $service->icon);
+                        File::delete(public_path($filepath . '/') . $service->icon);
+                        File::delete(public_path($filepath . '/thumb/') . $service->icon);
+                        File::delete(public_path($filepath . '/requestImg/') . $service->icon);
 
                         Service::find($id)->update([
                             'title'       => $request->title,
-                            'description'      => $request->description,
-                            'icon'      => $globalFunFile['file_name'],
+                            'description' => $request->description,
+                            'icon'        => $globalFunFile['file_name'],
                         ]);
                         Toastr::success('service has been updated');
                         return redirect()->back();
@@ -138,7 +138,7 @@ class ServicePageController extends Controller
                 } else {
                     Service::find($id)->update([
                         'title'       => $request->title,
-                        'description'      => $request->description,
+                        'description' => $request->description,
                     ]);
                     Toastr::success('service has been updated');
                     return redirect()->back();
@@ -146,17 +146,17 @@ class ServicePageController extends Controller
             } else {
                 Service::find($id)->update([
                     'title'       => $request->title,
-                    'description'      => $request->description,
+                    'description' => $request->description,
                 ]);
                 Toastr::success('service has been updated');
                 return redirect()->back();
             }
         } else {
-            $messages = $Validator->messages();
+            $messages = $validator->messages();
             foreach ($messages->all() as $message) {
                 Toastr::error($message, 'Failed', ['timeOut' => 10000]);
             }
-            return redirect()->back()->withErrors($Validator);
+            return redirect()->back()->withErrors($validator);
         }
     }
 
