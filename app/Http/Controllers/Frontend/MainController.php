@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\{Home, Experience, Testimonials};
+use App\Models\{Home, Experience, Service, Testimonials};
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,6 +13,7 @@ class MainController extends Controller
         $data['home'] = Home::first();
         $data['testimonial'] = Testimonials::get();
         $data['experience'] = Experience::take(3)->get();
+        $data['service'] = Service::take(3)->get();
         return view('frontend.index', $data);
     }
 }

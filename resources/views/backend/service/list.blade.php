@@ -6,7 +6,7 @@
     <!-- Highlighting rows and columns -->
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('service.create') }}" class="btn btn-info add-new float-right">Add New</a>
+            <a href="{{ route('provider.service.create') }}" class="btn btn-info add-new float-right">Add New</a>
         </div>
         <div class="row mx-1 data-list">
             @if ($service)
@@ -44,11 +44,11 @@
 
                                 <ul class="list-inline mb-0">
                                     <li class="list-inline-item"><a
-                                            href="{{ route('service.edit', [$services->id]) }}">Edit</a></li>
+                                            href="{{ route('provider.service.edit', [$services->id]) }}">Edit</a></li>
 
                                     <li class="list-inline-item"><a href="#" class="list-icons-item text-danger"><i
                                                 class="delete icon-bin"
-                                                delete-link="{{ route('service.destroy', [$services->id]) }}">@csrf</i></a>
+                                                delete-link="{{ route('provider.service.destroy', [$services->id]) }}">@csrf</i></a>
                                     </li>
                                 </ul>
                             </div>

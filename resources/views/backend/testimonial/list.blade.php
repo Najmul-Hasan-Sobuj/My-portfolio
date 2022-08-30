@@ -6,7 +6,7 @@
     <!-- Highlighting rows and columns -->
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('testimonial.create') }}" class="btn btn-info add-new float-right">Add New</a>
+            <a href="{{ route('provider.testimonial.create') }}" class="btn btn-info add-new float-right">Add New</a>
         </div>
         <div class="row mx-1 data-list">
             @if ($testimonial)
@@ -35,10 +35,10 @@
 
                                 <div class="ml-sm-3 mt-2 mt-sm-0">
                                     <a class="list-icons-item mr-1"
-                                        href="{{ route('testimonial.edit', [$testimonials->id]) }}">Edit</a>
+                                        href="{{ route('provider.testimonial.edit', [$testimonials->id]) }}">Edit</a>
                                     <a href="#" class="list-icons-item text-danger">
                                         <i class="delete icon-bin"
-                                            delete-link="{{ route('testimonial.destroy', [$testimonials->id]) }}">@csrf</i>
+                                            delete-link="{{ route('provider.testimonial.destroy', [$testimonials->id]) }}">@csrf</i>
                                     </a>
                                 </div>
                             </div>

@@ -12,19 +12,19 @@
     <link rel="icon" href="">
 
     <!--::::: ALL CSS CALLING :::::::-->
-    <link rel="stylesheet" href="front_end/css/plugins/animate.min.css">
-    <link rel="stylesheet" href="front_end/css/plugins/bootstrap.min.css">
-    <link rel="stylesheet" href="front_end/css/plugins/fontawesome.css">
-    <link rel="stylesheet" href="front_end/css/plugins/modal-video.min.css">
-    <link rel="stylesheet" href="front_end/css/plugins/stellarnav.css">
-    <link rel="stylesheet" href="front_end/css/plugins/owl.carousel.css">
-    <link rel="stylesheet" href="front_end/css/typography.css">
-    <link rel="stylesheet" href="front_end/css/theme.css">
-    <link rel="stylesheet" href="front_end/css/button.css">
-    <link rel="stylesheet" href="front_end/css/inner.css">
-    <link rel="stylesheet" href="front_end/css/responsive.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/modal-video.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/stellarnav.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/plugins/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/typography.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/button.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/inner.css') }}">
+    <link rel="stylesheet" href="{{ asset('front_end/css/responsive.css') }}">
+    <link href="{{ asset('global_assets/js/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css">
+
 
 </head>
 <!--HEADE END-->
@@ -54,24 +54,25 @@
 
 
     <!--:::::ALL JS FILES :::::::-->
-    <script src="front_end/js/plugins/jQuery.2.1.0.min.js"></script>
-    <script src="front_end/js/plugins/bootstrap.min.js"></script>
-    <script src="front_end/js/plugins/jquery.nav.js"></script>
-    <script src="front_end/js/plugins/jquery.waypoints.min.js"></script>
-    <script src="front_end/js/plugins/jquery-modal-video.min.js"></script>
-    <script src="front_end/js/plugins/stellarnav.js"></script>
-    <script src="front_end/js/plugins/popper.min.js"></script>
-    <script src="front_end/js/plugins/owl.carousel.js"></script>
-    <script src="front_end/js/plugins/wow.min.js"></script>
-    <script src="front_end/js/plugins/appear.js"></script>
-    <script src="front_end/js/plugins/easypiechart.min.js"></script>
-    <script src="front_end/js/plugins/animatenumber.min.js"></script>
-    <script src="front_end/js/plugins/bars.js"></script>
-    <script src="front_end/js/plugins/circle-progress.js"></script>
-    <script src="front_end/js/plugins/jquery.hoverdir.js"></script>
-    <script src="front_end/js/plugins/isotop.v3.0.4.min.js"></script>
-    <script src="front_end/js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ asset('front_end/js/plugins/jQuery.2.1.0.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/jquery.nav.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/jquery-modal-video.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/stellarnav.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/popper.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/owl.carousel.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/wow.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/appear.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/easypiechart.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/animatenumber.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/bars.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/circle-progress.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/jquery.hoverdir.js') }}"></script>
+    <script src="{{ asset('front_end/js/plugins/isotop.v3.0.4.min.js') }}"></script>
+    <script src="{{ asset('front_end/js/main.js') }}"></script>
+    <script src="{{ asset('global_assets/js/toastr/toastr.min.js') }}"></script>
+    {!! Toastr::message() !!}
     @stack('script')
 
 </body>

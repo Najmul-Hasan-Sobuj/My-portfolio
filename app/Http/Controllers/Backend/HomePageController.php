@@ -38,13 +38,11 @@ class HomePageController extends Controller
         $home = Home::first();
         if (!empty($home)) {
             $validator = [
-                'color_word' => 'required',
                 'title'      => 'required',
                 'quote'      => 'required',
             ];
         } else {
             $validator = [
-                'color_word' => 'required',
                 'title'      => 'required',
                 'quote'      => 'required',
                 'image'      => 'required',

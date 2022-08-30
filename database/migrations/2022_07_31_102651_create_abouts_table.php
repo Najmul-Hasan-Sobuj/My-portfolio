@@ -15,7 +15,7 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('video_url');
+            $table->longText('video_url');
             $table->string('title', 70);
             $table->text('details');
             $table->string('resume');

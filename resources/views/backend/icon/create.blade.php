@@ -3,7 +3,7 @@
     <!-- Basic layout-->
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('icon.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="myform" action="{{ route('provider.icon.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <fieldset class="mb-3">
                     <div class="row">
@@ -22,8 +22,6 @@
                                     <div class="d-flex justify-content-end align-items-center">
                                         <button id="reset" type="reset" class="btn btn-light">Reset <i
                                                 class="icon-reload-alt ml-2"></i></button>
-                                        {{-- <a id="back" href="{{ route('icon.index') }}" class="btn btn-success ml-3">Back
-                                            <i class="fas fa-backward ml-2"></i></a> --}}
                                         <button id="submit" class="btn btn-primary ml-3">Submit <i
                                                 class="icon-paperplane ml-2" value="Validate!"></i></button>
                                     </div>
@@ -79,7 +77,7 @@
                                                                     class="icon-download top-0"></i></a>
                                                             <a href="#" class="list-icons-item"><i
                                                                     class="delete icon-bin top-0"
-                                                                    delete-link="{{ route('icon.destroy', $pickIcons->id) }}">@csrf</i></a>
+                                                                    delete-link="{{ route('provider.icon.destroy', $pickIcons->id) }}">@csrf</i></a>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 @section('content')
-    <form id="myform" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data"
+    <form id="myform" action="{{ route('provider.blog.store') }}" method="POST" enctype="multipart/form-data"
         class="from-prevent-multiple-submits">
         @csrf
         <fieldset class="mb-3">

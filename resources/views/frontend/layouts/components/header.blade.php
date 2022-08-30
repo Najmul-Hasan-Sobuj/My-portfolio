@@ -12,17 +12,14 @@
                     <div class="stellarnav">
                         <ul class="navbarmneuclass">
                             <li><a href="{{ route('front.index') }}">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#service">Service</a></li>
+                            <li><a href="{{ route('about.index') }}">About</a></li>
+                            <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#">Pages</a>
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
                                     <li><a href="single-portfolio.html">Portfolio Details</a></li>
                                     <li><a href="blog.html">Blog</a></li>
                                     <li><a href="single-blog.html">Single Blog</a></li>
-                                    <li><a href="{{ route('contact.index') }}">Contact Us</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -31,14 +28,6 @@
             </div>
             <div class="d-none d-lg-block col-lg-3 align-self-center text-right">
                 <div class="search-area">
-                    <div class="search-box">
-                        <form action="">
-                            <input type="search" placeholder="Search">
-                        </form>
-                        <div class="search-btn">
-                            <a href="#"><i class="fas fa-search"></i></a>
-                        </div>
-                    </div>
                     <div class="grid-menu" id="grid-side">
                         <img src="front_end/img/icon/hamburger.svg" alt="">
                     </div>

@@ -3,7 +3,7 @@
     <!-- Basic layout-->
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('experience.update', [$experience->id]) }}" method="POST"
+            <form id="myform" action="{{ route('provider.experience.update', [$experience->id]) }}" method="POST"
                 class="from-prevent-multiple-submits">
                 @csrf
                 @method('PUT')
@@ -58,7 +58,7 @@
                     </div>
                 </fieldset>
                 <div class="d-flex justify-content-end align-items-center">
-                    <a id="back" href="{{ route('experience.index') }}" class="btn btn-success ml-3">Back
+                    <a id="back" href="{{ route('provider.experience.index') }}" class="btn btn-success ml-3">Back
                         <i class="fas fa-backward ml-2"></i></a>
                     <button id="submit" class="btn btn-primary ml-3 from-prevent-multiple-submits">Submit <i
                             class="icon-paperplane ml-2" value="Validate!"></i></button>

@@ -29,13 +29,12 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        DB::beginTransaction();
-        $Validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name'    => 'required',
             'email'   => 'required',
             'message' => 'required',
         ]);
-        if ($Validator->passes()) {
+        if ($validator->passes()) {
             Contact::create([
                 'name'    => $request->name,
                 'email'   => $request->email,
@@ -43,56 +42,11 @@ class ContactController extends Controller
             ]);
             return redirect()->back()->with('success', 'Message Send Successfully');
         } else {
-            $messages = $Validator->messages();
+            $messages = $validator->messages();
             foreach ($messages->all() as $message) {
-                return redirect()->back()->with('error', $message);
+                Toastr::error($message, 'Failed', ['timeOut' => 10000]);
             }
+            return redirect()->back()->withErrors($validator);
         }
-        DB::commit();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

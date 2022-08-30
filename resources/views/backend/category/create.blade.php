@@ -2,8 +2,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form id="myform" class="from-prevent-multiple-submits" action="{{ route('category.store') }}" method="POST"
-                enctype="multipart/form-data">
+            <form id="myform" class="from-prevent-multiple-submits" action="{{ route('provider.category.store') }}"
+                method="POST" enctype="multipart/form-data">
                 @csrf
                 <fieldset class="mb-3">
                     <div class="row">
@@ -46,14 +46,14 @@
                             <td>{{ $categorys->category_title }}</td>
                             <td class="text-center">
                                 <div class="list-icons">
-                                    {{-- <a href="{{ route('category.edit', [$categorys->id]) }}"
+                                    {{-- <a href="{{ route('provider.category.edit', [$categorys->id]) }}"
                                         class="list-icons-item text-info"><i class="icon-pencil7"></i></a> --}}
 
                                     <a id="editBtn" href="#" class="list-icons-item text-primary edit"
                                         data-toggle="modal" data-target="#editModal"><i class="icon-pencil7"></i></a>
 
                                     <a href="#" class="list-icons-item text-danger"><i class="delete icon-bin"
-                                            delete-link="{{ route('category.destroy', [$categorys->id]) }}">@csrf</i></a>
+                                            delete-link="{{ route('provider.category.destroy', [$categorys->id]) }}">@csrf</i></a>
                                 </div>
                             </td>
                         </tr>

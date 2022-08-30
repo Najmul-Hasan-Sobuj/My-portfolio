@@ -20,7 +20,7 @@
             @if ($experience)
                 @foreach ($experience as $experiences)
                     <div class="col-lg-4">
-                        <div class="skill-box skill-box2">
+                        <div class="skill-box skill-box2 h-100">
                             <small>{{ $experiences->starting_year }} --
                                 {{ $experiences->ending_year }} ({{ strtoupper($experiences->designation) }})</small>
                             <h5>{{ $experiences->title }}</h5>

@@ -6,7 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\validator;
 
 class CategoryPageController extends Controller
 {
@@ -39,23 +39,22 @@ class CategoryPageController extends Controller
      */
     public function store(Request $request)
     {
-        $CategoryTitle = Category::select('categories.category_title')->get();
 
-        $Validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'category_title' => 'required',
         ]);
-        if ($Validator->passes()) {
+        if ($validator->passes()) {
             Category::create([
                 'category_title' => $request->category_title,
             ]);
             Toastr::success('Data Inserted Successfully');
             return redirect()->back();
         } else {
-            $messages = $Validator->messages();
+            $messages = $validator->messages();
             foreach ($messages->all() as $message) {
                 Toastr::error($message, 'Failed', ['timeOut' => 10000]);
             }
-            return redirect()->back()->withErrors($Validator);
+            return redirect()->back()->withErrors($validator);
         }
     }
 

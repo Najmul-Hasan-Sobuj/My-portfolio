@@ -35,7 +35,7 @@ class AboutPageController extends Controller
     public function update(Request $request)
     {
         $about = About::first();
-        if (!empty($about)) {
+        if (!empty($about->video_url)) {
             $validator = [
                 'video_url' => 'required',
                 'title'     => 'required',

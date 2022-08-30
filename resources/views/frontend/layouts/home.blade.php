@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="wlc-title white">
-                        <h1 class="fadeInDown animated"><span>{{ $home->color_word }}</span> {{ $home->title }}</h1>
-                        <p class="fadeInDown animated">{{ $home->quote }} </p>
+                        <h1 class="fadeInDown animated"><span>{{ @$home->color_word }}</span> {{ @$home->title }}</h1>
+                        <p class="fadeInDown animated">{{ @$home->quote }} </p>
 
                         <a href="#" class="cbtn cbnt1 fadeInDown animated">Getting Started <i
                                 class="fal fa-angle-right"></i></a>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="wlc-author-1">
-            <img src="{{ asset('global_assets/uploads/requestImg/' . $home->image) }}" alt="">
+            <img src="{{ asset('global_assets/uploads/requestImg/' . @$home->image) }}" alt="">
             <h1 class="wlc-filltext">gilroy</h1>
         </div>
     </div>

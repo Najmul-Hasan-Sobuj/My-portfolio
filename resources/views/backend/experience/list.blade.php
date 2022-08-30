@@ -6,7 +6,7 @@
     <!-- Highlighting rows and columns -->
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('experience.create') }}" class="btn btn-info add-new float-right">Add New</a>
+            <a href="{{ route('provider.experience.create') }}" class="btn btn-info add-new float-right">Add New</a>
         </div>
         <div class="row mx-1 data-list">
             @if ($experience)
@@ -19,10 +19,10 @@
                                     <b>({{ strtoupper($experiences->designation) }})</b></span>
                                 <span class="font-weight-semibold">
                                     <a class="list-icons-item mr-1"
-                                        href="{{ route('experience.edit', [$experiences->id]) }}">Edit</a>
+                                        href="{{ route('provider.experience.edit', [$experiences->id]) }}">Edit</a>
                                     <a href="#" class="list-icons-item text-danger">
                                         <i class="delete icon-bin"
-                                            delete-link="{{ route('experience.destroy', [$experiences->id]) }}">@csrf</i>
+                                            delete-link="{{ route('provider.experience.destroy', [$experiences->id]) }}">@csrf</i>
                                     </a>
                                 </span>
                             </div>

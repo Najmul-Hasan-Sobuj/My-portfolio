@@ -3,7 +3,7 @@
     <!-- Basic layout-->
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('home.update') }}" method="POST" enctype="multipart/form-data"
+            <form id="myform" action="{{ route('provider.home.update') }}" method="POST" enctype="multipart/form-data"
                 class="from-prevent-multiple-submits">
                 @csrf
                 <fieldset class="mb-3">
@@ -50,20 +50,14 @@
                     </div>
                     <div class="form-group row">
                         <label>Your Photo:</label>
-                        <label class="custom-file">
+                        <label class="custom-file">if
                             <input type="file" id="image" name="image" class="custom-file-input"
                                 onchange="previewFile(this);">
                             <span class="custom-file-label">Choose file</span>
                         </label>
-                        <span class="form-text text-muted">Accepted formats: gif, png, jpg, heic. File
-                            height:475 * width:822</span>
                     </div>
                 </fieldset>
                 <div class="d-flex justify-content-end align-items-center">
-                    <button id="reset" type="reset" class="btn btn-light">Reset <i
-                            class="icon-reload-alt ml-2"></i></button>
-                    <a id="back" href="{{ route('home.index') }}" class="btn btn-success ml-3">Back <i
-                            class="fas fa-backward ml-2"></i></a>
                     <button id="submit" class="btn btn-primary ml-3 from-prevent-multiple-submits">Submit <i
                             class="icon-paperplane ml-2"></i></button>
                 </div>

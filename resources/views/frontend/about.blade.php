@@ -1,70 +1,5 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <style>
-        .vid-wrapper {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .vid {
-            display: inline-block;
-            vertical-align: top;
-            position: relative;
-            border: 1px solid;
-            padding: 2px;
-            cursor: pointer;
-        }
-
-        .vid::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-
-        h2.vid-head {
-            font-size: 20px;
-            color: #333;
-        }
-
-        /* Video Popup */
-        .video-popup {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 998;
-            background: rgba(0, 0, 0, .7);
-            cursor: pointer;
-            display: none !important;
-        }
-
-        .video-popup.show-video {
-            display: flex !important;
-        }
-
-        .iframe-wrapper {
-            position: relative;
-        }
-
-        .iframe-wrapper .close-video {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            top: -20px;
-            right: 0;
-            background: url(https://image.flaticon.com/icons/svg/149/149690.svg) #fff;
-            border-radius: 50%;
-            background-size: cover;
-        }
-    </style>
     <!--:::::WELCOME ATRA START :::::::-->
     <div class="welcome-area-wrap"
         style="background: url(front_end/img/bg/inner-header-bg.jpg);background-size: cover;background-position: center;"
@@ -98,9 +33,12 @@
             <div class="row">
                 <div class="col-lg-5 align-self-center">
                     <div class="about-shape">
-                        <iframe type="text/html" height="380" src="{{ $about->video_url }}" frameborder="0"></iframe>
-                        <div id="video-overlay" class="video-overlay">
-                            <a class="video-overlay-close"></a>
+                        <div class="about-img-section about-img-section1 text-center">
+                            <a id="play-video" class="video-play-button"
+                                href="https://www.youtube.com/watch?v=POg_AuFtUlA&list=RDPOg_AuFtUlA&start_radio=1"><span></span></a>
+                            <div id="video-overlay" class="video-overlay">
+                                <a class="video-overlay-close"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,33 +61,19 @@
         </div>
     </div>
     <!--:::::ABOUT AREA END :::::::-->
+
+    {{-- <div class="modal-video" tabindex="-1" role="dialog" aria-label="You just openned the modal video" id="L7CBM8H6XI9SP">
+        <div class="modal-video-body">
+            <div class="modal-video-inner">
+                <div class="modal-video-movie-wrap" style="padding-bottom:56.25%">
+                    <button class="modal-video-close-btn js-modal-video-dismiss-btn"
+                        aria-label="Close the modal by clicking here"></button>
+                    <iframe width="460" height="230"
+                        src="//www.youtube.com/embed/undefined?autoplay=1&amp;cc_load_policy=1&amp;color=null&amp;controls=1&amp;disablekb=0&amp;enablejsapi=0&amp;end=null&amp;fs=1&amp;h1=null&amp;iv_load_policy=1&amp;list=null&amp;listType=null&amp;loop=0&amp;modestbranding=null&amp;origin=null&amp;playlist=null&amp;playsinline=null&amp;rel=0&amp;showinfo=1&amp;start=0&amp;wmode=transparent&amp;theme=dark&amp;nocookie=false"
+                        frameborder="0" allowfullscreen="true" tabindex="-1">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 @endsection
-
-@push('script')
-    <script src="">
-        $(document).ready(function() {
-            $('.vid-slider .vid').on('click', function() {
-                // get required DOM Elements
-                var iframe_src = $(this).children('iframe').attr('src'),
-                    iframe = $('.video-popup'),
-                    iframe_video = $('.video-popup iframe'),
-                    close_btn = $('.close-video');
-                iframe_src = iframe_src + '?autoplay=1&rel=0'; // for autoplaying the popup video
-
-                // change the video source with the clicked one
-                $(iframe_video).attr('src', iframe_src);
-                $(iframe).fadeIn().addClass('show-video');
-
-                // remove the video overlay when clicking outside the video
-                $(document).on('click', function(e) {
-                    if ($(iframe).is(e.target) || $(close_btn).is(e.target)) {
-                        $(iframe).removeClass('show-video');
-                        $(iframe_video).attr('src', '');
-                    }
-                });
-
-            });
-
-        });
-    </script>
-@endpush

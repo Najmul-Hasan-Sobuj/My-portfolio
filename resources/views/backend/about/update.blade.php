@@ -3,8 +3,8 @@
     <!-- Basic layout-->
     <div class="card">
         <div class="card-body">
-            <form id="myform" action="{{ route('about.update') }}" class="from-prevent-multiple-submits" method="POST"
-                enctype="multipart/form-data">
+            <form id="myform" action="{{ route('provider.about.update') }}" class="from-prevent-multiple-submits"
+                method="POST" enctype="multipart/form-data">
                 @csrf
                 <fieldset class="mb-3">
                     <div class="row">
@@ -12,7 +12,7 @@
                             <!-- Basic layout-->
                             <div class="form-group">
                                 <label class="col-form-label">URL</label>
-                                <input class="form-control" type="url" name="video_url" value="{{ @$about->video_url }}"
+                                <input class="form-control" type="text" name="video_url" value="{{ @$about->video_url }}"
                                     required>
                             </div>
 
@@ -34,7 +34,7 @@
                         <label>Resume:</label>
                         <label class="custom-file">
                             <input type="file" id="resume" name="resume" class="custom-file-input"
-                                onchange="previewFile(this);" required>
+                                onchange="previewFile(this);">
                             <span class="custom-file-label">Choose file</span>
                         </label>
                         <span class="form-text text-muted">Accepted formats: zip, rar, pdf.</span>
